@@ -1,0 +1,61 @@
+﻿@model IEnumerable<FinTax.Core.Models.Coa>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Code)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Level)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DownFrom)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ReportType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Attachment)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Code)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Level)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DownFrom)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ReportType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Attachment)
+        </td>
+        <td>
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

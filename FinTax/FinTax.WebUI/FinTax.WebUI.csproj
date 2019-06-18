@@ -173,6 +173,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\COAManagerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
@@ -248,7 +249,6 @@
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
@@ -281,6 +281,11 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\COAManager\Index.cshtml" />
+    <Content Include="Views\COAManager\Create.cshtml" />
+    <Content Include="Views\COAManager\Edit.cshtml" />
+    <Content Include="Views\COAManager\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -293,6 +298,24 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FinTax.Core\FinTax.Core.csproj">
+      <Project>{732e1ac4-7cba-4853-a3ce-f0be34b4e13f}</Project>
+      <Name>FinTax.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FinTax.DataAccess.InMemory\FinTax.DataAccess.InMemory.csproj">
+      <Project>{b0723bb5-4722-4d1b-aef1-20ae06b426e3}</Project>
+      <Name>FinTax.DataAccess.InMemory</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FinTax.DataAccess.SQL\FinTax.DataAccess.SQL.csproj">
+      <Project>{76763b85-91ce-4157-ae6e-f3208ae41841}</Project>
+      <Name>FinTax.DataAccess.SQL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FinTax.Service\FinTax.Service.csproj">
+      <Project>{1defec3c-127a-47fb-bd22-6be9ec601d5a}</Project>
+      <Name>FinTax.Service</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
