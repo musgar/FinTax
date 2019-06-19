@@ -1,6 +1,7 @@
 using FinTax.Core.Contracts;
 using FinTax.Core.Models;
 using FinTax.DataAccess.InMemory;
+using FinTax.DataAccess.SQL;
 using System;
 
 using Unity;
@@ -45,10 +46,10 @@ namespace FinTax.WebUI
 
             // TODO: Register your type's mappings here.
             // container.RegisterType<IProductRepository, ProductRepository>();
-            container.RegisterType<IRepository<Coa>, InMemoryRepository<Coa>>();
-            container.RegisterType<IRepository<COAAttachment>, InMemoryRepository<COAAttachment>>();
-            container.RegisterType<IRepository<COALevel>, InMemoryRepository<COALevel>>();
-            container.RegisterType<IRepository<COAReportType>, InMemoryRepository<COAReportType>>();
+            container.RegisterType<IRepository<Coa>, SQLRepository<Coa>>();
+            container.RegisterType<IRepository<COAAttachment>, SQLRepository<COAAttachment>>();
+            container.RegisterType<IRepository<COALevel>, SQLRepository<COALevel>>();
+            container.RegisterType<IRepository<COAReportType>, SQLRepository<COAReportType>>();
         }
     }
 }

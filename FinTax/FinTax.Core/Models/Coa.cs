@@ -9,8 +9,6 @@ namespace FinTax.Core.Models
 {
     public class Coa : BaseEntity
     {
-        public string Id { get; set; }
-
         [DisplayName("Kode COA")]
         public string Code { get; set; }
         public string Description { get; set; }

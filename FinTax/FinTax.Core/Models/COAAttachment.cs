@@ -8,7 +8,6 @@ namespace FinTax.Core.Models
 {
     public class COAAttachment : BaseEntity
     {
-        public string Id { get; set; }
         public string Attachment { get; set; }
     }
 }

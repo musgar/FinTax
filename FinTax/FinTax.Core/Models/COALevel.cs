@@ -8,7 +8,6 @@ namespace FinTax.Core.Models
 {
     public class COALevel : BaseEntity
     {
-        public string Id { get; set; }
         public string Level { get; set; }
     }
 }
