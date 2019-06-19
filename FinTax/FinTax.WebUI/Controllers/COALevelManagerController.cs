@@ -10,11 +10,11 @@ namespace FinTax.WebUI.Controllers
 {
     public class COALevelManagerController : Controller
     {
-        COALevelRepository context;
+        InMemoryRepository<COALevel> context;
 
         public COALevelManagerController()
         {
-            context = new COALevelRepository();
+            context = new InMemoryRepository<COALevel>();
         }
 
         // GET: CoaManager

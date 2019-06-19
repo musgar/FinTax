@@ -6,14 +6,9 @@ using System.Threading.Tasks;
 
 namespace FinTax.Core.Models
 {
-    public class COALevel
+    public class COALevel : BaseEntity
     {
         public string Id { get; set; }
         public string Level { get; set; }
-
-        public COALevel()
-        {
-            this.Id = Guid.NewGuid().ToString();
-        }
     }
 }

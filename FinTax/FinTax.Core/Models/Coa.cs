@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace FinTax.Core.Models
 {
-    public class Coa
+    public class Coa : BaseEntity
     {
         public string Id { get; set; }
 
@@ -18,10 +18,5 @@ namespace FinTax.Core.Models
         public string DownFrom { get; set; }
         public string ReportType { get; set; }
         public string Attachment { get; set; }
-
-        public Coa()
-        {
-            this.Id = Guid.NewGuid().ToString();
-        }
     }
 }

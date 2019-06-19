@@ -6,14 +6,9 @@ using System.Threading.Tasks;
 
 namespace FinTax.Core.Models
 {
-    public class COAReportType
+    public class COAReportType : BaseEntity
     {
         public string Id { get; set; }
         public string ReportType { get; set; }
-
-        public COAReportType()
-        {
-            this.Id = Guid.NewGuid().ToString();
-        }
     }
 }

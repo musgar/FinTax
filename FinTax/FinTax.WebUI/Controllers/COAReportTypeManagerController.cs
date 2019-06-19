@@ -10,12 +10,12 @@ namespace FinTax.WebUI.Controllers
 {
     public class COAReportTypeManagerController : Controller
     {
-        COAReportTypeRepository context;
+        InMemoryRepository<COAReportType> context;
 
 
         public COAReportTypeManagerController()
         {
-            context = new COAReportTypeRepository();
+            context = new InMemoryRepository<COAReportType>();
         }
 
         // GET: CoaManager

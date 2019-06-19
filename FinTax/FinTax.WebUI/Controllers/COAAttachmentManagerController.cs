@@ -10,11 +10,11 @@ namespace FinTax.WebUI.Controllers
 {
     public class COAAttachmentManagerController : Controller
     {
-        COAAttachmentRepository context;
+        InMemoryRepository<COAAttachment> context;
 
         public COAAttachmentManagerController()
         {
-            context = new COAAttachmentRepository();
+            context = new InMemoryRepository<COAAttachment>();
         }
 
         // GET: CoaManager

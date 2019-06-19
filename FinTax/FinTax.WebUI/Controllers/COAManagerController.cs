@@ -11,17 +11,17 @@ namespace FinTax.WebUI.Controllers
 {
     public class COAManagerController : Controller
     {
-        CoaRepository context;
-        COAAttachmentRepository coaAttachments;
-        COALevelRepository coaLevels;
-        COAReportTypeRepository coaReportTypes;
+        InMemoryRepository<Coa> context;
+        InMemoryRepository<COAAttachment> coaAttachments;
+        InMemoryRepository<COALevel> coaLevels;
+        InMemoryRepository<COAReportType> coaReportTypes;
 
         public COAManagerController()
         {
-            context = new CoaRepository();
-            coaAttachments = new COAAttachmentRepository();
-            coaLevels = new COALevelRepository();
-            coaReportTypes = new COAReportTypeRepository();
+            context = new InMemoryRepository<Coa>();
+            coaAttachments = new InMemoryRepository<COAAttachment>();
+            coaLevels = new InMemoryRepository<COALevel>();
+            coaReportTypes = new InMemoryRepository<COAReportType>();
         }
 
         // GET: CoaManager

@@ -42,10 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="COAAttachmentRepository.cs" />
-    <Compile Include="COALevelRepository.cs" />
-    <Compile Include="COAReportTypeRepository.cs" />
-    <Compile Include="CoaRepository.cs" />
+    <Compile Include="InMemoryRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
