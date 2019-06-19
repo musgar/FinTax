@@ -173,7 +173,10 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\COAAttachmentManagerController.cs" />
+    <Compile Include="Controllers\COALevelManagerController.cs" />
     <Compile Include="Controllers\COAManagerController.cs" />
+    <Compile Include="Controllers\COAReportTypeManagerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
@@ -200,14 +203,6 @@
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="Scripts\esm\popper-utils.js" />
-    <Content Include="Scripts\esm\popper-utils.min.js" />
-    <Content Include="Scripts\esm\popper.js" />
-    <Content Include="Scripts\esm\popper.min.js" />
-    <Content Include="Scripts\esm\popper.min.js.map" />
-    <Content Include="Scripts\esm\popper.js.map" />
-    <Content Include="Scripts\esm\popper-utils.min.js.map" />
-    <Content Include="Scripts\esm\popper-utils.js.map" />
     <Content Include="Scripts\bootstrap.min.js.map" />
     <Content Include="Scripts\bootstrap.js.map" />
     <Content Include="Scripts\bootstrap.bundle.min.js.map" />
@@ -218,6 +213,14 @@
     <Content Include="Content\bootstrap-reboot.css.map" />
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
+    <Content Include="Scripts\esm\popper-utils.js" />
+    <Content Include="Scripts\esm\popper-utils.min.js" />
+    <Content Include="Scripts\esm\popper.js" />
+    <Content Include="Scripts\esm\popper.min.js" />
+    <Content Include="Scripts\esm\popper.min.js.map" />
+    <Content Include="Scripts\esm\popper.js.map" />
+    <Content Include="Scripts\esm\popper-utils.min.js.map" />
+    <Content Include="Scripts\esm\popper-utils.js.map" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -272,6 +275,11 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\COAManager\Index.cshtml" />
+    <Content Include="Views\COAManager\Create.cshtml" />
+    <Content Include="Views\COAManager\Edit.cshtml" />
+    <Content Include="Views\COAManager\Delete.cshtml" />
     <Content Include="Scripts\umd\popper.min.js.map" />
     <Content Include="Scripts\umd\popper.js.map" />
     <Content Include="Scripts\umd\popper-utils.min.js.map" />
@@ -281,20 +289,24 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\COAManager\Index.cshtml" />
-    <Content Include="Views\COAManager\Create.cshtml" />
-    <Content Include="Views\COAManager\Edit.cshtml" />
-    <Content Include="Views\COAManager\Delete.cshtml" />
+    <Content Include="Views\COALevelManager\Index.cshtml" />
+    <Content Include="Views\COALevelManager\Create.cshtml" />
+    <Content Include="Views\COALevelManager\Edit.cshtml" />
+    <Content Include="Views\COALevelManager\Delete.cshtml" />
+    <Content Include="Views\COAAttachmentManager\Index.cshtml" />
+    <Content Include="Views\COAAttachmentManager\Create.cshtml" />
+    <Content Include="Views\COAAttachmentManager\Edit.cshtml" />
+    <Content Include="Views\COAAttachmentManager\Delete.cshtml" />
+    <Content Include="Views\COAReportTypeManager\Index.cshtml" />
+    <Content Include="Views\COAReportTypeManager\Create.cshtml" />
+    <Content Include="Views\COAReportTypeManager\Edit.cshtml" />
+    <Content Include="Views\COAReportTypeManager\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <TypeScriptCompile Include="Scripts\index.d.ts" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
@@ -316,6 +328,9 @@
       <Project>{1defec3c-127a-47fb-bd22-6be9ec601d5a}</Project>
       <Name>FinTax.Service</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Scripts\index.d.ts" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

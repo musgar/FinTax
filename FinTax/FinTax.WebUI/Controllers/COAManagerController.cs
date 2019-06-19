@@ -1,4 +1,5 @@
 ﻿using FinTax.Core.Models;
+using FinTax.Core.ViewModels;
 using FinTax.DataAccess.InMemory;
 using System;
 using System.Collections.Generic;
@@ -11,23 +12,35 @@ namespace FinTax.WebUI.Controllers
     public class COAManagerController : Controller
     {
         CoaRepository context;
+        COAAttachmentRepository coaAttachments;
+        COALevelRepository coaLevels;
+        COAReportTypeRepository coaReportTypes;
 
         public COAManagerController()
         {
             context = new CoaRepository();
+            coaAttachments = new COAAttachmentRepository();
+            coaLevels = new COALevelRepository();
+            coaReportTypes = new COAReportTypeRepository();
         }
 
         // GET: CoaManager
         public ActionResult Index()
         {
-            List<Coa> coas = context.Collection().ToList();
+            List<Coa> coas = context.Collection().OrderBy(x => x.Code).ToList();
             return View(coas);
         }
 
         public ActionResult Create()
         {
-            Coa coa = new Coa();
-            return View(coa);
+            COAManagerViewModel viewModel = new COAManagerViewModel();
+
+            viewModel.COA = new Coa();
+            viewModel.COAAttachments = coaAttachments.Collection();
+            viewModel.COALevels = coaLevels.Collection();
+            viewModel.COAReportTypes = coaReportTypes.Collection();
+
+            return View(viewModel);
         }
 
         [HttpPost]
@@ -55,7 +68,13 @@ namespace FinTax.WebUI.Controllers
             }
             else
             {
-                return View(coa);
+                COAManagerViewModel viewModel = new COAManagerViewModel();
+                viewModel.COA = coa;
+                viewModel.COAAttachments = coaAttachments.Collection();
+                viewModel.COALevels = coaLevels.Collection();
+                viewModel.COAReportTypes = coaReportTypes.Collection();
+
+                return View(viewModel);
             }
         }
 

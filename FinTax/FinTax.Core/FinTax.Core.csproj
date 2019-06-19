@@ -42,7 +42,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Models\Coa.cs" />
+    <Compile Include="Models\COAAttachment.cs" />
+    <Compile Include="Models\COALevel.cs" />
+    <Compile Include="Models\COAReportType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\COAManagerViewModel.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
