@@ -1,4 +1,5 @@
-﻿using FinTax.Core.Models;
+﻿using FinTax.Core.Contracts;
+using FinTax.Core.Models;
 using FinTax.DataAccess.InMemory;
 using System;
 using System.Collections.Generic;
@@ -10,11 +11,11 @@ namespace FinTax.WebUI.Controllers
 {
     public class COALevelManagerController : Controller
     {
-        InMemoryRepository<COALevel> context;
+        IRepository<COALevel> context;
 
-        public COALevelManagerController()
+        public COALevelManagerController(IRepository<COALevel> context)
         {
-            context = new InMemoryRepository<COALevel>();
+            this.context = context;
         }
 
         // GET: CoaManager

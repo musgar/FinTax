@@ -1,4 +1,5 @@
-﻿using FinTax.Core.Models;
+﻿using FinTax.Core.Contracts;
+using FinTax.Core.Models;
 using FinTax.DataAccess.InMemory;
 using System;
 using System.Collections.Generic;
@@ -10,12 +11,12 @@ namespace FinTax.WebUI.Controllers
 {
     public class COAReportTypeManagerController : Controller
     {
-        InMemoryRepository<COAReportType> context;
+        IRepository<COAReportType> context;
 
 
-        public COAReportTypeManagerController()
+        public COAReportTypeManagerController(IRepository<COAReportType> context)
         {
-            context = new InMemoryRepository<COAReportType>();
+            this.context = context;
         }
 
         // GET: CoaManager

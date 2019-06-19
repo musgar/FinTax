@@ -1,4 +1,5 @@
-﻿using FinTax.Core.Models;
+﻿using FinTax.Core.Contracts;
+using FinTax.Core.Models;
 using FinTax.Core.ViewModels;
 using FinTax.DataAccess.InMemory;
 using System;
@@ -11,17 +12,18 @@ namespace FinTax.WebUI.Controllers
 {
     public class COAManagerController : Controller
     {
-        InMemoryRepository<Coa> context;
-        InMemoryRepository<COAAttachment> coaAttachments;
-        InMemoryRepository<COALevel> coaLevels;
-        InMemoryRepository<COAReportType> coaReportTypes;
+        IRepository<Coa> context;
+        IRepository<COAAttachment> coaAttachments;
+        IRepository<COALevel> coaLevels;
+        IRepository<COAReportType> coaReportTypes;
 
-        public COAManagerController()
+        public COAManagerController(IRepository<Coa> context, IRepository<COAAttachment> attachmentContext, 
+            IRepository<COALevel> levelContext, IRepository<COAReportType> reportTypeContext)
         {
-            context = new InMemoryRepository<Coa>();
-            coaAttachments = new InMemoryRepository<COAAttachment>();
-            coaLevels = new InMemoryRepository<COALevel>();
-            coaReportTypes = new InMemoryRepository<COAReportType>();
+            this.context = context;
+            this.coaAttachments = attachmentContext;
+            this.coaLevels = levelContext;
+            this.coaReportTypes = reportTypeContext;
         }
 
         // GET: CoaManager
